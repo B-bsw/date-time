@@ -1,6 +1,11 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&family=Schoolbell&display=swap');
+@import 'tailwindcss';
 
-:root {
+@theme{
+  --font-cute:"Schoolbell", cursive;
+  --color-primary: #292929
+}
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,4 +28,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
