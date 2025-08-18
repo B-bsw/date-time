@@ -112,7 +112,7 @@ export default function Home() {
             </section>
           ) : (
             <section
-              className="m-10 rounded-xl bg-white p-2 text-lg transition-colors duration-500 hover:cursor-pointer hover:bg-slate-500 hover:text-white md:text-xl lg:text-3xl"
+              className="max-[500px]:hidden m-10 rounded-xl bg-white p-2 text-lg transition-colors duration-500 hover:cursor-pointer hover:bg-slate-500 hover:text-white md:text-xl lg:text-3xl"
               onClick={handle.enter}
             >
               {iconFull()}
