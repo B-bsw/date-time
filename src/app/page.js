@@ -6,6 +6,8 @@ import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 export default function Home() {
   const [time, setTime] = useState(new Date());
   const [active, setActive] = useState(false);
+  const weekday = ["Sun","Mon","Tues","Wednes","Thurs","Fri","Sat "];
+  const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
   const handle = useFullScreenHandle();
 
@@ -79,7 +81,7 @@ export default function Home() {
   };
   return (
     <FullScreen handle={handle}>
-      <div className="bg-primary font-cute flex h-screen w-screen flex-col items-center justify-center border font-[400]">
+      <div className="bg-primary font-cute flex h-screen w-screen flex-col items-center justify-center">
         <section className="flex h-full flex-col items-center justify-center gap-10">
           <div>
             <span className="text-7xl font-bold text-white md:text-9xl lg:text-[300px]">
@@ -98,6 +100,7 @@ export default function Home() {
             </span>
           </div>
           <div className="text-3xl text-white">
+            <div className='text-lg text-zinc-500'>{weekday[time.getDay()]} | {month[time.getMonth()]}</div>
             {time.getDate()} / {time.getMonth()} / {time.getFullYear()}
           </div>
           {active ? (
