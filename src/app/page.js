@@ -101,7 +101,7 @@ export default function Home() {
           </div>
           <div className="text-3xl text-white">
             <div className='text-lg text-zinc-500'>{weekday[time.getDay()]} | {month[time.getMonth()]}</div>
-            {time.getDate()} / {time.getMonth()} / {time.getFullYear()}
+            {time.getDate()} / {time.getMonth() + 1} / {time.getFullYear()}
           </div>
           {active ? (
             <section
