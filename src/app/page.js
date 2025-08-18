@@ -18,7 +18,6 @@ export default function Home() {
 
   useEffect(() => {
     if (handle.active) {
-      console.log('avtive');
       setActive(true);
     } else {
       setActive(false);
@@ -98,7 +97,7 @@ export default function Home() {
               })}
             </span>
           </div>
-          <div className='text-white text-3xl'>
+          <div className="text-3xl text-white">
             {time.getDate()} / {time.getMonth()} / {time.getFullYear()}
           </div>
           {active ? (
