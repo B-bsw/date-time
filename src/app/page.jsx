@@ -1,6 +1,6 @@
 'use client';
 import React, { createContext, useState, useEffect } from 'react';
-import Home from './date/page';
+import Home from '../components/interface/page';
 import Headers from '@/components/headers/headers';
 
 export const AppContext = createContext(null);

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useEffect, useState, useContext } from 'react';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 import Headers from '@/components/headers/headers';
-import { AppContext } from '../page';
+import { AppContext } from '../../app/page';
 
 export default function Home() {
   const { active, setActive } = useContext(AppContext);
