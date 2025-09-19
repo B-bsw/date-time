@@ -23,7 +23,9 @@ const Headers = () => {
         <div className="">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline">TimeZone</Button>
+              <code className="bg-primary-foreground hover:bg-accent rounded-sm px-2 py-1 hover:cursor-pointer focus:bg-gray-900">
+                TimeZone
+              </code>
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="start"
