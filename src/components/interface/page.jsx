@@ -120,14 +120,14 @@ export default function Home() {
             </div>
             {active ? (
               <section
-                className={`${mouseMove && 'opacity-0'} m-10 rounded-xl bg-white p-2 text-lg transition-all duration-500 hover:scale-120 hover:cursor-pointer hover:bg-slate-500 hover:text-white md:text-xl lg:text-3xl`}
+                className={`${mouseMove ? 'opacity-0 scale-0' : 'hover:scale-120 hover:cursor-pointer hover:bg-slate-500 hover:text-white'} fixed bottom-50 m-10 rounded-xl bg-white p-2 text-lg transition-all duration-500 md:text-xl lg:text-3xl`}
                 onClick={handle.exit}
               >
                 {iconNotFull()}
               </section>
             ) : (
               <section
-                className={`${mouseMove && 'opacity-0'} m-10 rounded-xl bg-white p-2 text-lg transition-all duration-500 hover:scale-120 hover:cursor-pointer hover:bg-slate-500 hover:text-white max-[500px]:hidden md:text-xl lg:text-3xl`}
+                className={`${mouseMove ? 'opacity-0 scale-0' : 'hover:scale-120 hover:cursor-pointer hover:bg-slate-500 hover:text-white'} fixed bottom-50 m-10 rounded-xl bg-white p-2 text-lg transition-all duration-500  max-[500px]:hidden md:text-xl lg:text-3xl`}
                 onClick={handle.enter}
               >
                 {iconFull()}
