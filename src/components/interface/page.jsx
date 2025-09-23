@@ -1,14 +1,14 @@
-'use client';
-import Date from '@/components/dates/date';
-import Time from '@/components/times/time';
-import Image from 'next/image';
-import { useEffect, useState, useContext } from 'react';
-import { FullScreen, useFullScreenHandle } from 'react-full-screen';
-import Headers from '@/components/headers/headers';
-import { AppContext } from '../../app/page';
-import { Switch } from '@radix-ui/react-switch';
-import { Label } from '@radix-ui/react-label';
-import SwitchBtn from '../switch/switchBtn';
+'use client'
+import Date from '@/components/dates/date'
+import Time from '@/components/times/time'
+import Image from 'next/image'
+import { useEffect, useState, useContext } from 'react'
+import { FullScreen, useFullScreenHandle } from 'react-full-screen'
+import Headers from '@/components/headers/headers'
+import { AppContext } from '../../app/page'
+import { Switch } from '@radix-ui/react-switch'
+import { Label } from '@radix-ui/react-label'
+import SwitchBtn from '../switch/switchBtn'
 
 const iconFull = () => {
   return (
@@ -34,8 +34,8 @@ const iconFull = () => {
       <path d="M8 4l-4 0l0 4" />
       <path d="M4 4l6 6" />
     </svg>
-  );
-};
+  )
+}
 
 const iconNotFull = () => {
   return (
@@ -61,53 +61,48 @@ const iconNotFull = () => {
       <path d="M19 15l-4 0l0 4" />
       <path d="M15 15l6 6" />
     </svg>
-  );
-};
+  )
+}
 
 export default function Home() {
-  const { active, setActive, toggleFull } = useContext(AppContext);
-  const handle = useFullScreenHandle();
-  const [mouseMove, setMouseMove] = useState(false);
-
-  const time = () =>{
-    setTimeout(() => {
-      setMouseMove(true)
-    }, 5000);
-    setMouseMove(false)
-  }
+  const { active, setActive, toggleFull } = useContext(AppContext)
+  const handle = useFullScreenHandle()
+  const [mouseMove, setMouseMove] = useState(false)
 
   useEffect(() => {
     if (handle.active) {
-      setActive(true);
+      setActive(true)
     } else {
-      setActive(false);
+      setActive(false)
     }
-  }, [handle]);
-
+  }, [handle])
 
   useEffect(() => {
     const handleKey = (event) => {
-      if (event.key.toLowerCase() === 'f') { 
-        if(!active){
+      if (event.key.toLowerCase() === 'f') {
+        if (!active) {
           setActive(false)
           handle.enter()
         }
       }
-    };
-    window.addEventListener('keydown', handleKey);
+    }
+    window.addEventListener('keydown', handleKey)
     return () => {
-      window.removeEventListener('keydown', handleKey);
-    };
-  }, [active]);
+      window.removeEventListener('keydown', handleKey)
+    }
+  }, [active])
 
   useEffect(() => {
-    const handleMouseMove = (event) => {
-      time()
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-  
+    let mousemove
+    window.addEventListener('mousemove', () => {
+      clearTimeout(mousemove)
+      mousemove = setTimeout(() => {
+        setMouseMove(true)
+      }, 1000)
+      setMouseMove(false)
+    })
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
 
   return (
     <>
@@ -120,14 +115,14 @@ export default function Home() {
             </div>
             {active ? (
               <section
-                className={`${mouseMove ? 'opacity-0 scale-0' : 'hover:scale-120 hover:cursor-pointer hover:bg-slate-500 hover:text-white'} fixed bottom-50 m-10 rounded-xl bg-white p-2 text-lg transition-all duration-500 md:text-xl lg:text-3xl`}
+                className={`${mouseMove ? 'scale-0 opacity-0' : 'hover:scale-120 hover:cursor-pointer hover:bg-slate-500 hover:text-white'} fixed bottom-50 m-10 rounded-xl bg-white p-2 text-lg transition-all duration-500 md:text-xl lg:text-3xl`}
                 onClick={handle.exit}
               >
                 {iconNotFull()}
               </section>
             ) : (
               <section
-                className={`${mouseMove ? 'opacity-0 scale-0' : 'hover:scale-120 hover:cursor-pointer hover:bg-slate-500 hover:text-white'} fixed bottom-50 m-10 rounded-xl bg-white p-2 text-lg transition-all duration-500  max-[500px]:hidden md:text-xl lg:text-3xl`}
+                className={`${mouseMove ? 'scale-0 opacity-0' : 'hover:scale-120 hover:cursor-pointer hover:bg-slate-500 hover:text-white'} fixed bottom-50 m-10 rounded-xl bg-white p-2 text-lg transition-all duration-500 max-[500px]:hidden md:text-xl lg:text-3xl`}
                 onClick={handle.enter}
               >
                 {iconFull()}
@@ -137,5 +132,5 @@ export default function Home() {
         </div>
       </FullScreen>
     </>
-  );
+  )
 }

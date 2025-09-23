@@ -1,9 +1,9 @@
-'use client';
-import { AppContext } from '@/app/page';
-import React, { useEffect, useState , useContext } from 'react';
+'use client'
+import { AppContext } from '@/app/page'
+import React, { useEffect, useState, useContext } from 'react'
 
 const DateDay = () => {
-  const weekday = ['Sun', 'Mon', 'Tues', 'Wednes', 'Thurs', 'Fri', 'Sat '];
+  const weekday = ['Sun', 'Mon', 'Tues', 'Wednes', 'Thurs', 'Fri', 'Sat ']
   const month = [
     'Jan',
     'Feb',
@@ -17,8 +17,8 @@ const DateDay = () => {
     'Oct',
     'Nov',
     'Dec',
-  ];
-  const {time} = useContext(AppContext);
+  ]
+  const { time } = useContext(AppContext)
 
   return (
     <div className="text-3xl text-white">
@@ -27,7 +27,7 @@ const DateDay = () => {
       </div>
       {time.getDate()} / {time.getMonth() + 1} / {time.getFullYear()}
     </div>
-  );
-};
+  )
+}
 
-export default DateDay;
+export default DateDay

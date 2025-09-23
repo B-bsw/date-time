@@ -1,5 +1,5 @@
-'use client';
-import React, { useState, useContext } from 'react';
+'use client'
+import React, { useState, useContext } from 'react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,13 +9,13 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '../ui/dropdown-menu';
-import { DropdownMenuArrow } from '@radix-ui/react-dropdown-menu';
-import { Button } from '../ui/button';
-import { AppContext } from '@/app/page';
+} from '../ui/dropdown-menu'
+import { DropdownMenuArrow } from '@radix-ui/react-dropdown-menu'
+import { Button } from '../ui/button'
+import { AppContext } from '@/app/page'
 
 const Headers = () => {
-  const { county, setCounty } = useContext(AppContext);
+  const { county, setCounty } = useContext(AppContext)
 
   return (
     <div className="fixed w-full bg-red-500">
@@ -45,7 +45,7 @@ const Headers = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Headers;
+export default Headers

@@ -1,6 +1,6 @@
-'use client';
-import { AppContext } from '@/app/page';
-import React, { useEffect, useState, useContext } from 'react';
+'use client'
+import { AppContext } from '@/app/page'
+import React, { useEffect, useState, useContext } from 'react'
 
 const Time = () => {
   const zone = [
@@ -9,8 +9,8 @@ const Time = () => {
     { key: 'cn', country: 'zh-CN', timeZone: 'Asia/Shanghai' },
     { key: 'kr', country: 'ko-KR', timeZone: 'Asia/Seoul' },
     { key: 'jp', country: 'ja-JP', timeZone: 'Asia/Tokyo' },
-  ];
-  const { time, county } = useContext(AppContext);
+  ]
+  const { time, county } = useContext(AppContext)
 
   return (
     <div className="flex items-end justify-end">
@@ -18,12 +18,11 @@ const Time = () => {
         {zone.map((e) => {
           if (e.key === county) {
             return time.toLocaleTimeString(e.country, {
-                timeZone:e.timeZone,
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: false,
-              })
-            
+              timeZone: e.timeZone,
+              hour: '2-digit',
+              minute: '2-digit',
+              hour12: false,
+            })
           }
         })}
       </section>
@@ -31,7 +30,7 @@ const Time = () => {
         {String(time.getSeconds()).padStart(2, '0')}
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default Time;
+export default Time
