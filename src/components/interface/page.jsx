@@ -67,7 +67,7 @@ const iconNotFull = () => {
 export default function Home() {
   const { active, setActive, toggleFull } = useContext(AppContext)
   const handle = useFullScreenHandle()
-  const [mouseMove, setMouseMove] = useState(false)
+  const [mouseMove, setMouseMove] = useState(true)
 
   useEffect(() => {
     if (handle.active) {
