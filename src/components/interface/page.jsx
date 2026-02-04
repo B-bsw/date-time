@@ -107,7 +107,7 @@ export default function Home() {
   return (
     <>
       <FullScreen handle={handle}>
-        <div className="bg-primary flex h-screen items-center justify-center">
+        <div className="flex h-screen items-center justify-center">
           <div className="flex flex-col items-center gap-5">
             <Time />
             <div className="p-5">
@@ -115,14 +115,14 @@ export default function Home() {
             </div>
             {active ? (
               <section
-                className={`${mouseMove ? 'scale-0 opacity-0' : 'hover:scale-120 hover:cursor-pointer hover:bg-slate-500 hover:text-white'} fixed bottom-50 m-10 rounded-xl bg-white p-2 text-lg transition-all duration-500 md:text-xl lg:text-3xl`}
+                className={`${mouseMove ? 'scale-0 opacity-0' : 'hover:scale-120 hover:cursor-pointer hover:bg-accent hover:text-accent-foreground'} fixed bottom-50 m-10 rounded-xl bg-secondary text-secondary-foreground p-2 text-lg transition-all duration-500 md:text-xl lg:text-3xl`}
                 onClick={handle.exit}
               >
                 {iconNotFull()}
               </section>
             ) : (
               <section
-                className={`${mouseMove ? 'scale-0 opacity-0' : 'hover:scale-120 hover:cursor-pointer hover:bg-slate-500 hover:text-white'} fixed bottom-50 m-10 rounded-xl bg-white p-2 text-lg transition-all duration-500 max-[500px]:hidden md:text-xl lg:text-3xl`}
+                className={`${mouseMove ? 'scale-0 opacity-0' : 'hover:scale-120 hover:cursor-pointer hover:bg-accent hover:text-accent-foreground'} fixed bottom-50 m-10 rounded-xl bg-secondary text-secondary-foreground p-2 text-lg transition-all duration-500 max-[500px]:hidden md:text-xl lg:text-3xl`}
                 onClick={handle.enter}
               >
                 {iconFull()}

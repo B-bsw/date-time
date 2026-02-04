@@ -13,24 +13,26 @@ import {
 import { DropdownMenuArrow } from '@radix-ui/react-dropdown-menu'
 import { Button } from '../ui/button'
 import { AppContext } from '@/app/page'
+import { ModeToggle } from '../ui/mode-toggle'
 
 const Headers = () => {
   const { county, setCounty } = useContext(AppContext)
 
   return (
-    <div className="fixed w-full bg-red-500">
-      <div className="my-2 flex justify-end pr-10">
+    <div className="fixed w-full bg-transparent">
+      <div className="my-2 flex justify-end pr-10 gap-4 items-center">
+        <ModeToggle />
         <div className="">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <code className="bg-primary-foreground hover:bg-accent rounded-sm px-2 py-1 hover:cursor-pointer focus:bg-gray-900">
+              <code className="bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground rounded-sm px-2 py-1 hover:cursor-pointer transition-colors">
                 TimeZone
               </code>
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="start"
               sideOffset={10}
-              className={`border-0 bg-zinc-700 font-light text-white`}
+              className="bg-popover text-popover-foreground border-border"
             >
               <DropdownMenuLabel>TimeZone</DropdownMenuLabel>
               <DropdownMenuSeparator />

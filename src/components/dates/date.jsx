@@ -21,8 +21,8 @@ const DateDay = () => {
   const { time } = useContext(AppContext)
 
   return (
-    <div className="text-3xl text-white">
-      <div className="text-lg text-zinc-500">
+    <div className="text-3xl text-foreground">
+      <div className="text-lg text-muted-foreground">
         {weekday[time.getDay()]} | {month[time.getMonth()]}
       </div>
       {time.getDate()} / {time.getMonth() + 1} / {time.getFullYear()}

@@ -14,7 +14,7 @@ const Time = () => {
 
   return (
     <div className="flex items-end justify-end">
-      <section className="text-7xl font-bold text-white md:text-9xl lg:text-[300px]">
+      <section className="text-7xl font-bold text-foreground md:text-9xl">
         {zone.map((e) => {
           if (e.key === county) {
             return time.toLocaleTimeString(e.country, {
@@ -26,7 +26,7 @@ const Time = () => {
           }
         })}
       </section>
-      <section className="ml-4 flex justify-center pb-2 text-3xl font-bold text-red-600 md:text-4xl lg:text-[100px]">
+      <section className="ml-4 flex justify-center pb-2 text-3xl font-bold text-muted-foreground md:text-4xl lg:text-6xl">
         {String(time.getSeconds()).padStart(2, '0')}
       </section>
     </div>
